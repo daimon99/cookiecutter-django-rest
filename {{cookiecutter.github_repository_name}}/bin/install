@@ -1,0 +1,10 @@
+#!/bin/bash
+root=`dirname $0`/..
+if [ ! -d $root"/env" ]; then
+	echo 'install'
+	virtualenv $root/env
+	mkdir $root/logs
+	mkdir $root/static
+else
+	echo 'already installed'
+fi

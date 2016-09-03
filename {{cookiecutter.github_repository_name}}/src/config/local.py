@@ -40,3 +40,5 @@ class Local(Common):
             'DEFAULT_TIMEOUT': 500,
         },
     }
+
+    DATABASES = values.DatabaseURLValue('postgres://postgres@localhost/{{cookiecutter.app_name}}_local')

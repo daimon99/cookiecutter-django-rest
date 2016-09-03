@@ -1,0 +1,29 @@
+#!/bin/bash
+# 如果app根目录存在.prd文件，则认为是生产，否则就是测试
+root=`dirname $0`/..
+source $root/env/bin/activate
+source $root/.env
+mkdir -p $root/static
+echo $DJANGO_SECRET_KEY
+if [ -e $root/.prd ]; then
+    echo 'prd'
+    pip install -r $root/requirements/production.txt
+    python $root/src/manage.py makemigrations
+    python $root/src/manage.py migrate
+    python $root/src/manage.py collectstatic --noinput
+    nohup python $root/src/manage.py runserver 9021 > $root/logs/nohup.out &
+elif [ -e $root/.qa ]; then
+    echo 'qa'
+    pip install -r $root/requirements/production.txt
+    python $root/src/manage.py makemigrations
+    python $root/src/manage.py migrate
+    python $root/src/manage.py collectstatic --noinput
+    nohup python $root/src/manage.py runserver 8021 > $root/logs/nohup.out &
+else 
+    echo 'others'
+    pip install -r $root/requirements/local.txt
+    python $root/src/manage.py makemigrations
+    python $root/src/manage.py migrate
+    python $root/src/manage.py collectstatic --noinput
+    nohup python $root/src/manage.py runserver 7021 > $root/logs/nohup.out &
+fi

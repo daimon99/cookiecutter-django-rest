@@ -1,0 +1,12 @@
+#!/bin/bash
+
+approot=`dirname $0`/..
+if [ -e $approot/.prd ]; then
+    port=9021
+elif [ -e $approot/.qa ]; then
+    port=8021
+else
+    port=7021
+fi
+
+lsof -i:$port
