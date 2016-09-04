@@ -4,5 +4,5 @@
     "email": "daijian1@qq.com",
     "description": "HXT saas app.",
     "github_username": "daimon99",
-	"app_id": '23(will be the port, only 2 numbers, and the port will be 70xx, 80xx, 90xx)'
+	"app_id": "23(will be the port, only 2 numbers, and the port will be 70xx, 80xx, 90xx)"
 }
