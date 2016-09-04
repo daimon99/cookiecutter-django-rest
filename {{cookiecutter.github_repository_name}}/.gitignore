@@ -1,3 +1,11 @@
+.env
+.prd
+.qa
+.tst
+.prd
+/logs
+/staticfiles
+
 *.pyc
 *.db
 *~
