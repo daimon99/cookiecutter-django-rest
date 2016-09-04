@@ -11,19 +11,19 @@ if [ -e $root/.prd ]; then
     python $root/src/manage.py makemigrations
     python $root/src/manage.py migrate
     python $root/src/manage.py collectstatic --noinput
-    nohup python $root/src/manage.py runserver 9021 > $root/logs/nohup.out &
+    nohup python $root/src/manage.py runserver 90{{cookiecutter.app_id}} > $root/logs/nohup.out &
 elif [ -e $root/.qa ]; then
     echo 'qa'
     pip install -r $root/requirements/production.txt
     python $root/src/manage.py makemigrations
     python $root/src/manage.py migrate
     python $root/src/manage.py collectstatic --noinput
-    nohup python $root/src/manage.py runserver 8021 > $root/logs/nohup.out &
+    nohup python $root/src/manage.py runserver 80{{cookiecutter.app_id}} > $root/logs/nohup.out &
 else 
     echo 'others'
     pip install -r $root/requirements/local.txt
     python $root/src/manage.py makemigrations
     python $root/src/manage.py migrate
     python $root/src/manage.py collectstatic --noinput
-    nohup python $root/src/manage.py runserver 7021 > $root/logs/nohup.out &
+    nohup python $root/src/manage.py runserver 70{{cookiecutter.app_id}} > $root/logs/nohup.out &
 fi

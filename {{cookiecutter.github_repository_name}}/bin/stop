@@ -2,11 +2,14 @@
 
 approot=`dirname $0`/..
 if [ -e $approot/.prd ]; then
-    port=9021
+	echo 'prd'
+    port=90{{cookiecutter.app_id}}
 elif [ -e $approot/.qa ]; then
-    port=8021
+	echo 'qa'
+    port=80{{cookiecutter.app_id}}
 else
-    port=7021
+	echo 'tst'
+    port=70{{cookiecutter.app_id}}
 fi
 
 lsof -i:$port | awk 'NR==2{print "kill -TERM "$2" && tail ""'$approot'""/logs/nohup.out"}' | sh
