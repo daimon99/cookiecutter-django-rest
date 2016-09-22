@@ -26,6 +26,8 @@ cookiecutter gh:daimon99/cookiecutter-django-rest
 * django-rest-swagger (django rest 文档展示改进)
 * django-import-export ( django import / export 组件 )
 * wechatpy[cryptography] ( 微信开发库与加解密库 )
+* django-extensions (有加密字段，以及其它很多很好的辅助类）
+* django-kronos (非常好的定时任务库）
 
 ## 删除
 
