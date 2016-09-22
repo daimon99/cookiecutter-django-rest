@@ -47,7 +47,8 @@ THIRD_PARTY_APPS = (
     'django_rq',  # asynchronous queuing
     'versatileimagefield',  # image manipulation
     'rest_framework_swagger',
-    'import_export'
+    'import_export',
+    'django_extensions',
 )
 
 # Apps specific for this project go here.
