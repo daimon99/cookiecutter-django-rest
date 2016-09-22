@@ -6,5 +6,7 @@ if [ ! -d $root"/env" ]; then
 fi
 . $root"/env/bin/activate"
 pip install -r $root"/requirements/production.txt"
+mkdir $root/src/{{cookiecutter.app_name}}
+django-admin startapp {{cookiecutter.app_name}} src/{{cookiecutter.app_name}}
 python $root/src/manage.py collectstatic --noinput
 python $root/src/manage.py migrate
