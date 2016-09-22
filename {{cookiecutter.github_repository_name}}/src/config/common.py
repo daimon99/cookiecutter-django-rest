@@ -247,7 +247,7 @@ AUTH_USER_MODEL = 'users.User'
 
 # Django Rest Framework
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'config.VuetablePagination',
+    # 'DEFAULT_PAGINATION_CLASS': 'config.VuetablePagination',
     'PAGE_SIZE': int(os.getenv('DJANGO_PAGINATION_LIMIT', 10)),
     'DATETIME_FORMAT': '%Y-%m-%dT%H:%M:%S%z',
     'DEFAULT_RENDERER_CLASSES': (
