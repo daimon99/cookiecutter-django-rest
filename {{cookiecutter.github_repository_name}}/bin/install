@@ -1,8 +1,11 @@
 #!/bin/bash
 root=`dirname $0`/..
-if [ ! -d $root"/env" ]; then
+if [ ! -d $root/env ]; then
 	echo 'install'
 	virtualenv $root/env
+fi
+if [ ! -d $root/logs ]; then
+    mkdir $root/logs
 fi
 . $root"/env/bin/activate"
 pip install -r $root"/requirements/production.txt"
