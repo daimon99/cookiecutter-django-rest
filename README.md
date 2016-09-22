@@ -5,6 +5,13 @@
 
 根据 `cookiecutter-django-rest` 改造, 适合自己的一个Rest项目模板
 
+# 使用
+
+```
+pip install cookiecutter
+cookiecutter gh:daimon99/cookiecutter-django-rest
+```
+
 # 相比原版, 依赖组件方面有如下调整。
 
 ## 优化
