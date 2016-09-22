@@ -1,3 +1,53 @@
+项目模板
+=======
+
+> 还没在生产环境使用过, 生产环境配置尚不成熟
+
+根据 `cookiecutter-django-rest` 改造, 适合自己的一个Rest项目模板
+
+# 相比原版, 依赖组件方面有如下调整。
+
+## 优化
+
+* django-configurations 用 django-environ 代替
+
+## 增加
+
+* django-crispy-forms (改进restframework web 界面字段显示效果)
+* oss2 ( ALIYUN OSS SDK )
+* django-aliyun-oss2-storage ( ALIYUN django 组件 )
+* django-rest-swagger (django rest 文档展示改进)
+* django-import-export ( django import / export 组件 )
+* wechatpy[cryptography] ( 微信开发库与加解密库 )
+
+## 删除
+
+* 暂无
+
+# 使用中注意
+
+* 使用 django-environ 管理配置
+
+提供了参考配置文件 `.env.sample`。
+您应该copy该文件, 在项目根目录下创建 `.env` 来管理自己的配置。
+
+* 默认配置不发邮件
+
+在django异常时, 不发邮件, 而是把邮件放在 logs 目录中。
+
+* 重构了bin下的服务安装、 启动、 停止、 状态查询的脚本（适用于测试环境的）
+
+* 时区调整为了北京时间
+
+* 记录数据库访问日志（注意生产环境要禁掉DEBUG）
+
+* 运行`python manage.py test app`时, 不创建数据库, 保留数据库数据(请自己注意删除测试数据)
+
+* bin脚本区分三个环境, 分别在不同端口运行。(tst/qa/prd)
+
+原版说明
+=======
+
 # cookiecutter-django-rest
 [![Build Status](https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=docs-project-readme-travis)](https://travis-ci.org/agconti/cookiecutter-django-rest)
 [![Updates](https://pyup.io/repos/github/agconti/cookiecutter-django-rest/shield.svg)](https://pyup.io/repos/github/agconti/cookiecutter-django-rest/)

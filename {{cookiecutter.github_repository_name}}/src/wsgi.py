@@ -1,5 +1,7 @@
+# encoding=utf8
+
 """
-WSGI config for {{cookiecutter.app_name}} project.
+WSGI config for mozi project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -8,8 +10,7 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 """
 import os
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config")
-os.environ.setdefault("DJANGO_CONFIGURATION", "Production")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.production")
 
 from configurations.wsgi import get_wsgi_application  # noqa
 from whitenoise.django import DjangoWhiteNoise        # noqa
