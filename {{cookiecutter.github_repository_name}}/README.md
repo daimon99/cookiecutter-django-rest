@@ -20,6 +20,12 @@ Install dependencies:
 bin/install
 cp .env.sample .env
 ```
+
+如果是生产环境, 请再执行
+```bash
+touch .prd
+```
+
 Create the database:
 
 ```bash

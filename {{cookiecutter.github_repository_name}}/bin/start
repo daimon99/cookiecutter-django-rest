@@ -6,6 +6,8 @@ mkdir -p $root/static
 echo $DJANGO_SECRET_KEY
 if [ -e $root/.prd ]; then
     echo 'prd'
+    echo "export DJANGO_SETTINGS_MODULE=config.production" > $root/.prd
+    source $root/.prd
     pip install -r $root/requirements/production.txt
     python $root/src/manage.py makemigrations
     python $root/src/manage.py migrate
