@@ -10,6 +10,9 @@ fi
 if [ ! -d $root/static ]; then
     mkdir $root/static
 fi
+if [ ! -d $root/keys ]; then
+    mkdir $root/keys
+fi
 . $root"/env/bin/activate"
 pip install -r $root"/requirements/production.txt"
 mkdir $root/src/{{cookiecutter.app_name}}
