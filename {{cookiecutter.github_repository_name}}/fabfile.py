@@ -1,3 +1,4 @@
+# coding: utf8
 import os
 import random
 import string
@@ -16,6 +17,12 @@ env.environments = ['dev',
 
 def serve():
     local('python {}/manage.py runserver'.format(env.project_name))
+
+
+def keys():
+    """EncryptedTextField字段的密钥"""
+    local('keyczart create --location=keys --purpose=crypt')
+    local('keyczart addkey --location=keys --status=primary --size=256')
 
 
 def test():
@@ -121,6 +128,7 @@ def migrate():
     require('environment')
     local('heroku run python {}/manage.py migrate --remote {}'.format(env.project_name,
                                                                       env.environment))
+
 
 def create_superuser():
     require('environment')
