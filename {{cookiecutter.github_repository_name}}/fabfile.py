@@ -27,7 +27,7 @@ def keys():
 
 def drawmodel():
     """画模型图"""
-    local('python src/manage.py graph_models -a -o docs/models.png')
+    local('python src/manage.py graph_models -a -g -o docs/models.png')
 
 
 def test():
