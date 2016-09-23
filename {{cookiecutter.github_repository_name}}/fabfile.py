@@ -25,6 +25,11 @@ def keys():
     local('keyczart addkey --location=keys --status=primary --size=256')
 
 
+def drawmodel():
+    """画模型图"""
+    local('python src/manage.py graph_models -a -o docs/models.png')
+
+
 def test():
     """
     Runs nose test suite
